@@ -130,7 +130,7 @@ Stop playing and remove image element from the DOM
 
 ###### Getter
 
-#### el `Canvas`
+#### el `Image`
 Return the targeting image element. If no `el` was given to the constructor, you will have to add this to your page.
 
 
