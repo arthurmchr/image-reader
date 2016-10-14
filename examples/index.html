@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Lib starter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<img src="background1.jpg" alt="" width="1920" height="1080" id="image">
+
+		<script src="preloadjs-0.6.2.min.js"></script>
+		<script src="../dist/image-reader.js"></script>
+
+		<script>
+			function completeHandler() {
+
+				var imgTab = [];
+
+				for (var i = 1; i < 11; i++) {
+
+					// using blob
+
+					imgTab.push(URL.createObjectURL(queue.getResult('background' + i + '.jpg', true)));
+
+					// or simple url
+
+					// imgTab.push('background' + i + '.jpg');
+				}
+
+				/* using npm you will have to omit the .default */
+
+				reader = new ImageReader.default({
+					images: imgTab,
+					loop: true,
+					fps: 2,
+					el: document.getElementById('image'),
+					onRepeat: function() {
+
+						console.log('onrepeat');
+					},
+					onRepeatComplete: function() {
+
+						console.log('onrepeatcomplete');
+					},
+					onComplete: function() {
+
+						console.log('oncomplete');
+					}
+				});
+
+				requestAnimationFrame(raf);
+			}
+
+			function raf() {
+
+				requestAnimationFrame(raf);
+
+				if (reader) reader.update();
+			}
+
+			var reader;
+			var queue = new createjs.LoadQueue(true);
+			queue.setMaxConnections(6);
+			queue.maintainScriptOrder = false;
+
+			queue.on('complete', completeHandler);
+
+			for (var i = 1; i < 11; i++) {
+
+				queue.loadFile('background' + i + '.jpg', false);
+			}
+
+			queue.load();
+		</script>
+	</body>
+</html>
