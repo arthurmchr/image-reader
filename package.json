@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arthurmuchir/moon.git"
+    "url": "https://github.com/arthurmuchir/image-reader"
   },
   "bugs": {
-    "url": "https://github.com/arthurmuchir/moon/issues"
+    "url": "https://github.com/arthurmuchir/image-reader/issues"
   },
   "keywords": [
     "Image",

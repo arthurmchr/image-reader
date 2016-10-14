@@ -18,17 +18,19 @@ var ImageReader = require('image-reader');
 
 var reader;
 
-var img = new Image();
-img.onload = function() {
-	
-	reader = new SpriteReader({
-		image: img,
-		json: require('sprite-data.json')
-	});
+// preload all your images, then
 
-	anim();
-};
-img.src = 'sprite.jpg';
+reader = new ImageReader({
+	image: [
+		'/media/img1.jpg',
+		'/media/img2.jpg',
+		'/media/img3.jpg',
+		'/media/img4.jpg',
+		'/media/img5.jpg'
+	]
+});
+
+anim();
 
 function anim() {
 	
@@ -44,7 +46,7 @@ Documentation
 ### Constructor
 
 ```javascript
-new SpriteReader(image[, options]);
+new ImageReader(image[, options]);
 ```
 
 #### image `Array[String]`
