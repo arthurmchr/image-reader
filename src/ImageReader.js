@@ -145,6 +145,12 @@ export default class ImageReader {
 		this._side = from > to ? -1 : 1;
 	}
 
+	goToAndPlay(frame) {
+
+		this._current = frame;
+		this._isPlaying = true;
+	}
+
 	goToAndStop(frame) {
 
 		this._current = frame;
