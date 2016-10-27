@@ -116,6 +116,9 @@ Switch playing side, optionaly forcing it
 - **from** `Number` : Set starting frame and go to it
 - **to** `Number` : Set ending frame
 
+#### goToAndPlay(frame)
+- **frame** `Number` : Move cursor to `frame` and start playing
+
 #### goToAndStop(frame)
 - **frame** `Number` : Move cursor to `frame` and stop playing
 

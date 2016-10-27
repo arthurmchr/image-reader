@@ -168,6 +168,16 @@ export default class ImageReader {
 		return this._elTarget;
 	}
 
+	get current() {
+
+		return this._current;
+	}
+
+	get total() {
+
+		return this._images.length - 1;
+	}
+
 	set fps(nbr) {
 
 		this._interval = 1000 / nbr;
