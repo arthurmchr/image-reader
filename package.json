@@ -1,6 +1,6 @@
 {
   "name": "image-reader",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Allow you to control and switch an image source to play as a MovieClip.",
   "author": "Arthur Muchir <arthur.muchir@gmail.com>",
   "license": "MIT",
