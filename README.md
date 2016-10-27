@@ -20,15 +20,13 @@ var reader;
 
 // preload all your images, then
 
-reader = new ImageReader({
-	image: [
-		'/media/img1.jpg',
-		'/media/img2.jpg',
-		'/media/img3.jpg',
-		'/media/img4.jpg',
-		'/media/img5.jpg'
-	]
-});
+reader = new ImageReader([
+	'/media/img1.jpg',
+	'/media/img2.jpg',
+	'/media/img3.jpg',
+	'/media/img4.jpg',
+	'/media/img5.jpg'
+]);
 
 anim();
 
@@ -46,10 +44,10 @@ Documentation
 ### Constructor
 
 ```javascript
-new ImageReader(image[, options]);
+new ImageReader(images[, options]);
 ```
 
-#### image `Array[String]`
+#### images `Array[String]`
 The image urls that are going to be switched. Preloading them will avoid flickering.
 
 ---

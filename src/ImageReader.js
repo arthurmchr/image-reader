@@ -1,8 +1,6 @@
 export default class ImageReader {
 
-	constructor({
-		images = null,
-
+	constructor(images = null, {
 		autoplay = true,
 		el = null,
 		fps = 30,
