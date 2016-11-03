@@ -30,9 +30,8 @@
 
 				/* using npm you will have to omit the .default */
 
-				reader = new ImageReader.default({
-					images: imgTab,
-					loop: true,
+				reader = new ImageReader.default(imgTab, {
+					// loop: true,
 					fps: 2,
 					el: document.getElementById('image'),
 					onRepeat: function() {
@@ -48,6 +47,11 @@
 						console.log('oncomplete');
 					}
 				});
+
+				setTimeout(function() {
+
+					reader.reverse(false);
+				}, 1000);
 
 				requestAnimationFrame(raf);
 			}

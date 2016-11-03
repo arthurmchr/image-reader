@@ -16,7 +16,7 @@ export default class ImageReader {
 	} = {}) {
 
 		if (!images) throw new Error('images parameter can not be null');
-		if (!images.length) throw new Error('images parameter must be an array');
+		if (!Array.isArray(images)) throw new Error('images parameter must be an array');
 
 		this._images = images;
 
@@ -131,8 +131,10 @@ export default class ImageReader {
 		const tmpFrom = this._from;
 		const tmpTo = this._to;
 
-		this._side === 1 ? this._from = Math.min(tmpFrom, tmpTo) : Math.max(tmpFrom, tmpTo);
-		this._side === 1 ? this._to = Math.max(tmpFrom, tmpTo) : Math.min(tmpFrom, tmpTo);
+		this._from = this._side === 1 ? Math.min(tmpFrom, tmpTo) : Math.max(tmpFrom, tmpTo);
+		this._to = this._side === 1 ? Math.max(tmpFrom, tmpTo) : Math.min(tmpFrom, tmpTo);
+
+		console.log(this._from, this._to);
 	}
 
 	goFromTo(from, to) {
@@ -175,7 +177,7 @@ export default class ImageReader {
 
 	get total() {
 
-		return this._images.length - 1;
+		return this._images.length;
 	}
 
 	set fps(nbr) {
