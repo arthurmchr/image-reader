@@ -129,10 +129,16 @@ Stop playing and remove image element from the DOM
 
 ### Properties
 
-###### Getter
+###### Getters
 
 #### el `Image`
 Return the targeting image element. If no `el` was given to the constructor, you will have to add this to your page.
+
+#### current `Number`
+Return the current frame, index0 based
+
+#### total `Number`
+Return images array length
 
 
 ###### Setters
