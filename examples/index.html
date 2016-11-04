@@ -45,13 +45,9 @@
 					onComplete: function() {
 
 						console.log('oncomplete');
+						reader.goToAndStop(0);
 					}
 				});
-
-				setTimeout(function() {
-
-					reader.reverse(false);
-				}, 1000);
 
 				requestAnimationFrame(raf);
 			}

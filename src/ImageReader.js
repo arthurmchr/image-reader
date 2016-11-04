@@ -133,8 +133,6 @@ export default class ImageReader {
 
 		this._from = this._side === 1 ? Math.min(tmpFrom, tmpTo) : Math.max(tmpFrom, tmpTo);
 		this._to = this._side === 1 ? Math.max(tmpFrom, tmpTo) : Math.min(tmpFrom, tmpTo);
-
-		console.log(this._from, this._to);
 	}
 
 	goFromTo(from, to) {
@@ -157,6 +155,8 @@ export default class ImageReader {
 
 		this._current = frame;
 		this._isPlaying = false;
+
+		this.update(true);
 	}
 
 	destroy() {
