@@ -104,7 +104,7 @@ export default class ImageReader {
 				if (this._onComplete) this._onComplete();
 			}
 		}
-		else this._current += this._side;
+		else if (!force) this._current += this._side;
 	}
 
 	play() {
@@ -157,6 +157,11 @@ export default class ImageReader {
 		this._isPlaying = false;
 
 		this.update(true);
+	}
+
+	isPlaying() {
+
+		return this._isPlaying;
 	}
 
 	destroy() {
